@@ -4,6 +4,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * https://practice.geeksforgeeks.org/problems/word-break/0
+ * @author Pragadesh Gopalakrishnan
+ */
 public class WordBreak {
 
     public static void main(String[] args) {

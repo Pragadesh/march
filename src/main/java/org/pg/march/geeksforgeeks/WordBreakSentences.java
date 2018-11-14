@@ -7,6 +7,10 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * https://practice.geeksforgeeks.org/problems/word-break-part-2/0/
+ * @author Pragadesh Gopalakrishnan
+ */
 public class WordBreakSentences {
     public static void main(String[] args) {
         Scanner scanner = null;
