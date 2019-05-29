@@ -11,13 +11,13 @@ public class TwoDimensionArrayRotation {
         Scanner scanner = null;
         try {
             scanner = new Scanner(System.in);
-            int totalTestcases = scanner.nextInt();
+            int totalTestcases = Integer.parseInt(scanner.nextLine());
             while (totalTestcases-- > 0) {
                 int matrixDimension = Integer.parseInt(scanner.nextLine());
                 String inputValues = scanner.nextLine();
                 int[][] matrix = convertToArray(inputValues, matrixDimension);
                 rotate90(matrix, matrixDimension);
-                System.out.println(printMatrix(matrix));
+                System.out.println(printableMatrix(matrix));
             } 
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,7 +30,7 @@ public class TwoDimensionArrayRotation {
         }
 	}
 
-	protected static String printMatrix(int[][] matrix) {
+	protected static String printableMatrix(int[][] matrix) {
 		boolean firstElement = true;
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < matrix.length; i++) {
