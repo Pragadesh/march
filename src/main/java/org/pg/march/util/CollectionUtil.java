@@ -3,6 +3,8 @@ package org.pg.march.util;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.pg.march.lc.coll.ListNode;
+
 public class CollectionUtil {
 
     public static <T> boolean containsAll(Collection<T> dataList, T... values) {
@@ -47,5 +49,19 @@ public class CollectionUtil {
             
         }
         return true;
+    }
+
+    public static ListNode createLinkedList(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(nums[0]);
+        ListNode prev = head;
+        for (int i = 1; i < nums.length; i++) {
+            ListNode next = new ListNode(nums[i]);
+            prev.next = next;
+            prev = next;
+        }
+        return head;
     }
 }

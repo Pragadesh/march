@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 import org.pg.march.util.CollectionUtil;
+import org.pg.march.util.CollectionUtilTest;
 
 import junit.framework.Assert;
 

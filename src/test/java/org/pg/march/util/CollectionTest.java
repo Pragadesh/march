@@ -1,5 +1,6 @@
 package org.pg.march.util;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,6 +10,10 @@ public class CollectionTest {
 
 	@Test
 	public void testGenericAssignment() {
-		List<String> list = Collections.emptyList();
+		int[] nums1 = {0,1,2,2,4,5,6,7,8,9,10};
+		System.out.println(Arrays.binarySearch(nums1, 0, 11, 3));
+		
+		int[] nums2 = {0,1,2,4,4,5,6,7,8,9,10};
+        System.out.println(Arrays.binarySearch(nums2, 0, 11, 3));
 	}
 }
