@@ -16,21 +16,21 @@ public class RedundantConnectionDirectedTest {
     @Test
     public void testcase1() {
         int[][] edges = new int[][] { { 1, 2 }, { 1, 3 }, { 2, 3 } };
-        int[] cycleEdge = redundantConnectionDirected.findRedundantConnection(edges);
+        int[] cycleEdge = redundantConnectionDirected.findRedundantDirectedConnection(edges);
         Assert.assertArrayEquals(new int[] { 2, 3 }, cycleEdge);
     }
 
     @Test
     public void testcase2() {
         int[][] edges = new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 1, 4 }, { 1, 5 } };
-        int[] cycleEdge = redundantConnectionDirected.findRedundantConnection(edges);
+        int[] cycleEdge = redundantConnectionDirected.findRedundantDirectedConnection(edges);
         Assert.assertArrayEquals(new int[] { 1, 4 }, cycleEdge);
     }
 
     @Test
     public void testcase3() {
-        int[][] edges = new int[][] { { 9, 10 }, { 5, 8 }, { 2, 6 }, { 1, 5 }, { 3, 8 }, { 4, 9 }, { 8, 10 }, { 4, 10 }, { 6, 8 }, { 7, 9 } };
-        int[] cycleEdge = redundantConnectionDirected.findRedundantConnection(edges);
-        Assert.assertArrayEquals(new int[] { 4, 10 }, cycleEdge);
+        int[][] edges = new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 1 }, { 1, 5 } };
+        int[] cycleEdge = redundantConnectionDirected.findRedundantDirectedConnection(edges);
+        Assert.assertArrayEquals(new int[] { 4, 1 }, cycleEdge);
     }
 }

@@ -15,11 +15,19 @@ import org.pg.march.lc.coll.TreeNode;
 
 public class CollectionUtilTest {
 
-    /**
-     * @deprecated Use {@link CollectionUtil#_HASH} instead
-     */
-    public static final String _HASH = CollectionUtil._HASH;
-
+    public static void assertArrayOfArray(Integer[][] expected, Integer[][] actual) {
+        if ((actual == null || actual.length == 0) && (expected == null || expected.length == 0)) {
+            return;
+        }
+        if ((actual == null || actual.length == 0) || (expected == null || expected.length == 0)) {
+            Assert.fail("One of the list is empty");
+        }
+        Assert.assertEquals("Number of List", expected.length, actual.length);
+        for (int i = 0; i < expected.length; i++) {
+            Assert.assertArrayEquals("List #" + i, expected[i], actual[i]);
+        }
+    }
+    
     public static void assertLinkedList(int[] nums, ListNode head) {
         if (nums == null || nums.length == 0) {
             Assert.assertNull("No nodes expected", head);
