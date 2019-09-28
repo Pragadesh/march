@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.pg.march.lc.coll.ListNode;
 import org.pg.march.lc.coll.Node;
+import org.pg.march.lc.coll.TreeNode;
 
 public class CollectionUtil {
 
@@ -99,6 +100,20 @@ public class CollectionUtil {
             prev = curr;
         }
         return head;
+    }
+    
+    public static TreeNode _copy(TreeNode root) {
+        if (root == null) {
+            return root;
+        }
+        TreeNode newNode = new TreeNode(root.val);
+        if (root.left != null) {
+            newNode.left = _copy(root.left);
+        }
+        if (root.right != null) {
+            newNode.right = _copy(root.right);
+        }
+        return newNode;
     }
 
 }
