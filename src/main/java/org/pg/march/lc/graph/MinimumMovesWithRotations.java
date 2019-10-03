@@ -40,11 +40,6 @@ public class MinimumMovesWithRotations {
         while(!path.isEmpty()) {
             Vertex v = path.pop();
             System.out.println(v);
-//            if(v.position == Position.HORIZONTAL) {
-//                System.out.println("-");
-//            }else if(v.position == Position.VERTICAL) {
-//                System.out.println("|");
-//            }
         }
     }
 
