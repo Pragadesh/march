@@ -15,46 +15,46 @@ public class SortByGroupsRespectingDependencies {
 
     public int[] sortItems(int n, int m, int[] group, List<List<Integer>> beforeItems) {
 
-        Graph graph = new Graph(n);
-
-        for (int i = 0; i < beforeItems.size(); i++) {
-            for (Integer before : beforeItems.get(i)) {
-                graph.addEdge(i, before);
+        for (int i = 0; i < group.length; i++) {
+            if (group[i] == -1) {
+                group[i] = m++;
             }
         }
-        TopologySort topology = new TopologySort(graph);
-        Iterable<Integer> items = topology.sort();
-        if(items == null) {
+
+        Graph itemGraph = new Graph(n);
+        Graph groupGraph = new Graph(m);
+        for (int i = 0; i < beforeItems.size(); i++) {
+            int igroup = group[i];
+            for (Integer before : beforeItems.get(i)) {
+                itemGraph.addEdge(i, before);
+                if (group[before] != igroup) {
+                    groupGraph.addEdge(igroup, group[before]);
+                }
+            }
+        }
+        TopologySort itemTopology = new TopologySort(itemGraph);
+        Iterable<Integer> items = itemTopology.sort();
+        TopologySort groupTopology = new TopologySort(groupGraph);
+        Iterable<Integer> groups = groupTopology.sort();
+        
+        if (items == null || groups == null) {
             return new int[] {};
         }
 
-        Map<Integer, List<Integer>> groups = new HashMap<>();
+        Map<Integer, List<Integer>> groupItemMap = new HashMap<>();
         for (Integer item : items) {
             int g = group[item];
-            if (g >= 0) {
-                groups.putIfAbsent(g, new ArrayList<>());
-                groups.get(g).add(item);
-            }
-
+            groupItemMap.putIfAbsent(g, new ArrayList<>());
+            groupItemMap.get(g).add(item);
         }
         int i = 0;
         int[] result = new int[n];
-        for (Integer item : items) {
-            if (group[item] < 0) {
-                result[i++] = item;
-            } else if (groups.containsKey(group[item])) {
-                for (Integer gItem : groups.remove(group[item])) {
-                    result[i++] = gItem;
-                }
-
-            }
-        }
-        for (List<Integer> grps : groups.values()) {
-            for (Integer gItem : grps) {
+        for(int g : groups) {
+            for (Integer gItem :  groupItemMap.getOrDefault(g, new ArrayList<>())) {
                 result[i++] = gItem;
             }
+            
         }
-
         return result;
     }
 
