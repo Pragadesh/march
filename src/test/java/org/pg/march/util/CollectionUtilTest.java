@@ -3,10 +3,12 @@ package org.pg.march.util;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.pg.march.lc.coll.ListNode;
@@ -26,6 +28,20 @@ public class CollectionUtilTest {
         for (int i = 0; i < expected.length; i++) {
             Assert.assertArrayEquals("List #" + i, expected[i], actual[i]);
         }
+    }
+    
+    public static <T> void assertIgnoreOrderList(List<T> expected, List<T> actual) {
+        if (expected == null || expected.size() == 0) {
+            Assert.assertTrue(actual == null || actual.size() == 0);
+            return;
+        }
+        Assert.assertNotNull("Empty response", actual);
+        Assert.assertEquals("List size", expected.size(), actual.size());
+        Set<T> actualSet = new HashSet<>(actual);
+        for (T exp : expected) {
+            Assert.assertTrue(exp.toString(), actualSet.remove(exp));
+        }
+        Assert.assertTrue("Extra elements: " + actualSet, actualSet.size() == 0);
     }
     
     public static void assertLinkedList(int[] nums, ListNode head) {
