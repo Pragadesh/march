@@ -44,6 +44,23 @@ public class CollectionUtilTest {
         Assert.assertTrue("Extra elements: " + actualSet, actualSet.size() == 0);
     }
     
+    public static <T> void assertIgnoreOrderListOfList(List<List<T>> expectedList, List<List<T>> actualList) {
+        if (expectedList == null || expectedList.size() == 0) {
+            Assert.assertTrue(actualList == null || actualList.size() == 0);
+            return;
+        }
+        Assert.assertNotNull("Empty response", actualList);
+        Assert.assertEquals("List size", expectedList.size(), actualList.size());
+        Set<String> actualSet = new HashSet<>();
+        for(List<T> actual : actualList) {
+            actualSet.add(actual.toString());
+        }
+        for (List<T> expected : expectedList) {
+            Assert.assertTrue(expected.toString(), actualSet.remove(expected.toString()));
+        }
+        Assert.assertTrue("Extra elements: " + actualSet, actualSet.size() == 0);
+    }
+    
     public static void assertLinkedList(int[] nums, ListNode head) {
         if (nums == null || nums.length == 0) {
             Assert.assertNull("No nodes expected", head);
