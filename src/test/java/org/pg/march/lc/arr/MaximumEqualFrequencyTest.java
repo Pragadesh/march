@@ -29,7 +29,7 @@ public class MaximumEqualFrequencyTest {
     @Test
     public void testcase3() {
         int[] nums = { 1, 1, 1, 2, 2, 2 };
-        Assert.assertEquals(3, maximumEqualFrequency.maxEqualFreq(nums));
+        Assert.assertEquals(5, maximumEqualFrequency.maxEqualFreq(nums));
     }
 
     @Test
