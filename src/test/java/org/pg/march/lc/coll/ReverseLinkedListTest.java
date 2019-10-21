@@ -17,7 +17,7 @@ public class ReverseLinkedListTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 1, 2 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode reverseHead = reverseLinkedList.reverseList(head);
@@ -25,7 +25,7 @@ public class ReverseLinkedListTest {
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 1, 2, 3, 4 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode reverseHead = reverseLinkedList.reverseList(head);
@@ -33,7 +33,7 @@ public class ReverseLinkedListTest {
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 1, 2, 3, 4, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode reverseHead = reverseLinkedList.reverseList(head);
@@ -41,7 +41,7 @@ public class ReverseLinkedListTest {
     }
 
     @Test
-    public void testCase4() {
+    public void testcase4() {
         int[] nums = { 1 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode reverseHead = reverseLinkedList.reverseList(head);
@@ -49,7 +49,7 @@ public class ReverseLinkedListTest {
     }
 
     @Test
-    public void testCase5() {
+    public void testcase5() {
         int[] nums = {};
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode reverseHead = reverseLinkedList.reverseList(head);

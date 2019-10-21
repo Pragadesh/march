@@ -14,7 +14,7 @@ public class SudokuValidityTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         char [][] board = {
         		  {'5','3','.','.','7','.','.','.','.'},
         		  {'6','.','.','1','9','5','.','.','.'},
@@ -30,7 +30,7 @@ public class SudokuValidityTest {
     }
     
     @Test
-    public void testCase2() {
+    public void testcase2() {
         char [][] board = {
         		  {'8','3','.','.','7','.','.','.','.'},
         		  {'6','.','.','1','9','5','.','.','.'},

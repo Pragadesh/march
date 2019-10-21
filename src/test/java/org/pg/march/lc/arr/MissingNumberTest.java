@@ -15,13 +15,13 @@ public class MissingNumberTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 3, 0, 1 };
         Assert.assertEquals(2, missingNumber.missingNumber(nums));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         Assert.assertEquals(8, missingNumber.missingNumber(nums));
     }

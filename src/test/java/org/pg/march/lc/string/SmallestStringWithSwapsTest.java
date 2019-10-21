@@ -20,7 +20,7 @@ public class SmallestStringWithSwapsTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         List<List<Integer>> pairs = new ArrayList<>();
         pairs.add(Lists.newArrayList(0, 3));
         pairs.add(Lists.newArrayList(1, 2));
@@ -28,7 +28,7 @@ public class SmallestStringWithSwapsTest {
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         List<List<Integer>> pairs = new ArrayList<>();
         pairs.add(Lists.newArrayList(0, 3));
         pairs.add(Lists.newArrayList(1, 2));
@@ -37,7 +37,7 @@ public class SmallestStringWithSwapsTest {
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         List<List<Integer>> pairs = new ArrayList<>();
         pairs.add(Lists.newArrayList(0, 1));
         pairs.add(Lists.newArrayList(1, 2));

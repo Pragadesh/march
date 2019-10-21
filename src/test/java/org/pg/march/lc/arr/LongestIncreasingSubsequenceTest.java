@@ -15,19 +15,19 @@ public class LongestIncreasingSubsequenceTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 10, 9, 2, 5, 3, 7, 101, 18 };
         Assert.assertEquals(4, longestIncreasingSubsequence.lengthOfLIS(nums));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 1, 3, 6, 7, 9, 4, 10, 5, 6 };
         Assert.assertEquals(6, longestIncreasingSubsequence.lengthOfLIS(nums));
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 7, 8, 9, 8, 9, 10 };
         Assert.assertEquals(6, longestIncreasingSubsequence.lengthOfLIS(nums));
     }

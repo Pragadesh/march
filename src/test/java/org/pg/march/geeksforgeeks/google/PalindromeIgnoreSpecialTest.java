@@ -10,7 +10,7 @@ import junit.framework.Assert;
 public class PalindromeIgnoreSpecialTest {
     
     @Test
-    public void testCase1() {
+    public void testcase1() {
         Assert.assertEquals(YES, isPalindrome("Ab?/Ba"));
         Assert.assertEquals(YES, isPalindrome("I am :IronnorI Ma, i"));
         Assert.assertEquals(YES, isPalindrome("I am :IronnorI Ma, i"));

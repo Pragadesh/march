@@ -20,7 +20,7 @@ public class ClosestPointsToOriginTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[][] points = { { 1, 3 }, { -2, 2 } };
         int[][] expResult = { { -2, 2 } };
         int[][] actResult = closestPointsToOrigin.kClosest(points, 1);
@@ -28,7 +28,7 @@ public class ClosestPointsToOriginTest {
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int K = 2;
         int[][] points = { { 3, 3 }, { 5, -1 }, { -2, 4 } };
         int[][] expResult = { { 3, 3 }, { -2, 4 } };

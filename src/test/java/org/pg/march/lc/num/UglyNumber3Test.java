@@ -15,22 +15,22 @@ public class UglyNumber3Test {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         Assert.assertEquals(4, uglyNumber3.nthUglyNumber(3, 2, 3, 5));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         Assert.assertEquals(6, uglyNumber3.nthUglyNumber(4, 2, 3, 4));
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         Assert.assertEquals(10, uglyNumber3.nthUglyNumber(5, 2, 11, 13));
     }
 
     @Test
-    public void testCase4() {
+    public void testcase4() {
         Assert.assertEquals(1999999984, uglyNumber3.nthUglyNumber(1000000000, 2, 217983653, 336916467));
     }
 }

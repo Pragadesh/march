@@ -15,7 +15,7 @@ public class RemoveNodeFromEndTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 1, 2, 3, 4, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode newHead = removeNodeFromEnd.removeNthFromEnd(head, 2);
@@ -23,7 +23,7 @@ public class RemoveNodeFromEndTest {
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 1, 2, 3, 4, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode newHead = removeNodeFromEnd.removeNthFromEnd(head, 1);
@@ -31,7 +31,7 @@ public class RemoveNodeFromEndTest {
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 1, 2, 3, 4, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode newHead = removeNodeFromEnd.removeNthFromEnd(head, 5);
@@ -39,7 +39,7 @@ public class RemoveNodeFromEndTest {
     }
 
     @Test
-    public void testCase4() {
+    public void testcase4() {
         int[] nums = { 1, 2, 3, 4, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         ListNode newHead = removeNodeFromEnd.removeNthFromEnd(head, 6);

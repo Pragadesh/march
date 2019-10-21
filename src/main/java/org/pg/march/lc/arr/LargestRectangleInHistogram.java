@@ -12,7 +12,7 @@ public class LargestRectangleInHistogram {
         Stack<Pair> stack = new Stack<>();
         for (int i = 0; i < heights.length; i++) {
             Pair pair = null;
-            while(!stack.isEmpty() && stack.peek().height > heights[i]) {
+            while(!stack.isEmpty() && stack.peek().height >= heights[i]) {
                 pair = stack.pop();
                 maxArea = Math.max(maxArea, pair.height * (i - pair.index));
             }
@@ -25,7 +25,7 @@ public class LargestRectangleInHistogram {
         return maxArea;
     }
     
-    private static class Pair{
+    private static class Pair {
         private int index;
         private int height;
         

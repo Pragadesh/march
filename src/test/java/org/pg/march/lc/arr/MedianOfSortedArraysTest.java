@@ -15,42 +15,42 @@ public class MedianOfSortedArraysTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums1 = { 1, 3 };
         int[] nums2 = { 2 };
         Assert.assertEquals(2d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums1 = { 1, 2 };
         int[] nums2 = { 3, 4 };
         Assert.assertEquals(2.5d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));
     }
     
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums1 = { 3, 4 };
         int[] nums2 = { 1, 2 };
         Assert.assertEquals(2.5d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));
     }
 
     @Test
-    public void testCase4() {
+    public void testcase4() {
         int[] nums1 = { 1 };
         int[] nums2 = {};
         Assert.assertEquals(1d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));
     }
     
     @Test
-    public void testCase5() {
+    public void testcase5() {
         int[] nums1 = { 1,2 };
         int[] nums2 = {-1,3};
         Assert.assertEquals(1.5d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));
     }
     
     @Test
-    public void testCase6() {
+    public void testcase6() {
         int[] nums1 = { 1,2 };
         int[] nums2 = {1,1};
         Assert.assertEquals(1d, medianOfSortedArrays.findMedianSortedArrays(nums1, nums2));

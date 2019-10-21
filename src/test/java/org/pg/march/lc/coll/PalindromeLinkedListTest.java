@@ -16,28 +16,28 @@ public class PalindromeLinkedListTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 1, 2 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         Assert.assertEquals("Palindrome detected", false, palindromeLinkedList.isPalindrome(head));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 1, 2, 2, 1 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         Assert.assertEquals("Palindrome detected", true, palindromeLinkedList.isPalindrome(head));
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 1, 2, 9, 2, 1 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         Assert.assertEquals("Palindrome detected", true, palindromeLinkedList.isPalindrome(head));
     }
     
     @Test
-    public void testCase4() {
+    public void testcase4() {
         int[] nums = { 1, 9, 9, 2, 1 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         Assert.assertEquals("Palindrome detected", false, palindromeLinkedList.isPalindrome(head));

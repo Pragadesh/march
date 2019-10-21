@@ -17,7 +17,7 @@ public class CountInSortedArrayTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 0, 1, 2, 2, 3 };
         Assert.assertEquals(2, countInSortedArray.numberOfOccurrences(nums, 2));
         Assert.assertEquals(1, countInSortedArray.numberOfOccurrences(nums, 0));

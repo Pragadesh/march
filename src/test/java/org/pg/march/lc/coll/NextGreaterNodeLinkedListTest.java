@@ -15,7 +15,7 @@ public class NextGreaterNodeLinkedListTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 2, 1, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         int[] largerNodes = nextGreaterNodeLinkedList.nextLargerNodes(head);
@@ -23,7 +23,7 @@ public class NextGreaterNodeLinkedListTest {
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 2, 7, 4, 3, 5 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         int[] largerNodes = nextGreaterNodeLinkedList.nextLargerNodes(head);
@@ -31,7 +31,7 @@ public class NextGreaterNodeLinkedListTest {
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 1, 7, 5, 1, 9, 2, 5, 1 };
         ListNode head = CollectionUtil.createLinkedList(nums);
         int[] largerNodes = nextGreaterNodeLinkedList.nextLargerNodes(head);

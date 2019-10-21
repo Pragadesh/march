@@ -15,37 +15,37 @@ public class RegexExpressionMatchingTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         Assert.assertEquals(false, regexExpressionMatching.isMatch("aa", "a"));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         Assert.assertEquals(true, regexExpressionMatching.isMatch("aa", "a*"));
     }
 
     @Test
-    public void testCase3() {
+    public void testcase3() {
         Assert.assertEquals(true, regexExpressionMatching.isMatch("ab", ".*"));
     }
 
     @Test
-    public void testCase4() {
+    public void testcase4() {
         Assert.assertEquals(true, regexExpressionMatching.isMatch("aab", "c*a*b"));
     }
 
     @Test
-    public void testCase5() {
+    public void testcase5() {
         Assert.assertEquals(false, regexExpressionMatching.isMatch("mississippi", "mis*is*p*."));
     }
 
     @Test
-    public void testCase6() {
+    public void testcase6() {
         Assert.assertEquals(true, regexExpressionMatching.isMatch("", ".*"));
     }
 
     @Test
-    public void testCase7() {
+    public void testcase7() {
         Assert.assertEquals(true, regexExpressionMatching.isMatch("", ""));
     }
 

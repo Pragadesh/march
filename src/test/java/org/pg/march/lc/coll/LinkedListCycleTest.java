@@ -16,7 +16,7 @@ public class LinkedListCycleTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = {3,2,0,-4};
         int loopPos = 1;
         NodeCreator nodeCreator = new NodeCreator(nums, loopPos);
@@ -25,7 +25,7 @@ public class LinkedListCycleTest {
     }
     
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = {1,2};
         int loopPos = 0;
         NodeCreator nodeCreator = new NodeCreator(nums, loopPos);
@@ -34,7 +34,7 @@ public class LinkedListCycleTest {
     }
     
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = {1};
         int loopPos = -1;
         NodeCreator nodeCreator = new NodeCreator(nums, loopPos);

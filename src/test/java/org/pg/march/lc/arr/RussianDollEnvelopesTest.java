@@ -15,7 +15,7 @@ public class RussianDollEnvelopesTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[][] envelopes = { { 5, 4 }, { 6, 4 }, { 6, 7 }, { 2, 3 } };
         Assert.assertEquals(3, russianDollEnvelopes.maxEnvelopes(envelopes));
     }

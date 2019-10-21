@@ -14,7 +14,7 @@ public class HappyNumberTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
 //        Assert.assertEquals(true, happyNumber.isHappy(19));
         Assert.assertEquals(true, happyNumber.isHappy(20));
     }

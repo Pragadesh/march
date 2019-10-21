@@ -14,19 +14,19 @@ public class FindDuplicateNumberTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         int[] nums = { 1, 3, 4, 2, 2 };
         Assert.assertEquals(2, firstDuplicateNumber.findDuplicate(nums));
     }
 
     @Test
-    public void testCase2() {
+    public void testcase2() {
         int[] nums = { 3, 1, 3, 4, 2 };
         Assert.assertEquals(3, firstDuplicateNumber.findDuplicate(nums));
     }
     
     @Test
-    public void testCase3() {
+    public void testcase3() {
         int[] nums = { 1, 2, 3, 1, 4 };
         Assert.assertEquals(1, firstDuplicateNumber.findDuplicate(nums));
     }
