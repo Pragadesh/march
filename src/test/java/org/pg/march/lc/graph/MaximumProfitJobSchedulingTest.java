@@ -37,4 +37,12 @@ public class MaximumProfitJobSchedulingTest {
 		int[] profit = { 5, 6, 4 };
 		Assert.assertEquals(6, maximumProfitJobScheduling.jobScheduling(startTime, endTime, profit));
 	}
+	
+	@Test
+	public void testcase4() {
+		int[] startTime = { 4, 2, 4, 8, 2 };
+		int[] endTime = { 5, 5, 5, 10, 8 };
+		int[] profit = { 1, 2, 8, 10, 4 };
+		Assert.assertEquals(18, maximumProfitJobScheduling.jobScheduling(startTime, endTime, profit));
+	}
 }

@@ -1,6 +1,7 @@
 package org.pg.march.lc.graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -10,6 +11,32 @@ import java.util.PriorityQueue;
  */
 public class MaximumProfitJobScheduling {
 
+	public int jobSchedulingFromDiscussion(int[] startTime, int[] endTime, int[] profit) {
+		int len = startTime.length;
+		IntervalNode[] jobs = new IntervalNode[len];
+		for(int i=0; i<len; i++) {
+			IntervalNode node = new IntervalNode(startTime[i], endTime[i], profit[i]);
+			jobs[i] = node;
+		}
+		Arrays.sort(jobs, Comparator.comparingInt(IntervalNode::getEnd));
+		int[] dp = new int[len];
+		dp[0] = jobs[0].profit;
+		for (int i = 1; i < len; i++) {
+			dp[i] = Math.max(dp[i-1], jobs[i].profit);
+			for (int j = i - 1; j >= 0; j--) {
+				if(jobs[i].start >= jobs[j].end) {
+					dp[i] = Math.max(dp[i], dp[j] + jobs[i].profit);
+					break;
+				}
+			}
+		}
+		int max = Integer.MIN_VALUE;
+		for(int p : dp) {
+			max = Math.max(max, p);
+		}
+		return max;
+	}
+	
 	public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
 		PriorityQueue<IntervalNode> startDatePQ = new PriorityQueue<>(Comparator.comparingInt(IntervalNode::getStart));
 		for(int i=0; i<startTime.length; i++) {
