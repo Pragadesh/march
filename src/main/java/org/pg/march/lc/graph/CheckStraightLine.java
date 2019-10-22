@@ -1,5 +1,8 @@
 package org.pg.march.lc.graph;
 
+/*
+ * https://leetcode.com/contest/weekly-contest-159/problems/check-if-it-is-a-straight-line/
+ */
 public class CheckStraightLine {
 
     public boolean checkStraightLine(int[][] coordinates) {
