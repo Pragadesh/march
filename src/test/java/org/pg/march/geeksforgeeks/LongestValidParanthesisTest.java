@@ -9,7 +9,7 @@ import junit.framework.Assert;
 public class LongestValidParanthesisTest {
 
     @Test
-    public void testCase1() {
+    public void testcase1() {
         Assert.assertEquals(4, calculateLength(")(()()(()"));
         Assert.assertEquals(2, calculateLength("()(()"));
         Assert.assertEquals(6, calculateLength("()(((()())"));
