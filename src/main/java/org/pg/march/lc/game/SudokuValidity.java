@@ -35,6 +35,18 @@ public class SudokuValidity {
         }
         return true;
     }
+    
+    public boolean isFull(char[][] board) {
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				int n = board[i][j] - '0';
+				if(n < 1 || n > 9) {
+					return false;
+				}
+			}
+		}
+		return true;
+    }
 
     private void validateCell(char[][] board, int[][] state, int row, int column, int val) {
         validateCellPosition(state, row, ROW, val);

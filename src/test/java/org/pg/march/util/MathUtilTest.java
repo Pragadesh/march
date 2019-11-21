@@ -24,4 +24,11 @@ public class MathUtilTest {
     public void testcase2() {
         Assert.assertEquals(16383L, mathUtil.allPossibleCombination(14));
     }
+    
+    @Test
+    public void testcase3() {
+        for(int i=0; i< 21; i++) {
+        	System.out.println(1 << i);
+        }
+    }
 }
