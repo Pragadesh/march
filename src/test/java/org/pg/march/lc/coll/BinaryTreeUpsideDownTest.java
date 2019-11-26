@@ -18,7 +18,7 @@ public class BinaryTreeUpsideDownTest {
 
 	@Test
 	public void testcase1() {
-		int[] nums = { 1, 2, 3 };
+		Integer[] nums = { 1, 2, 3 };
 		TreeNode root = CollectionUtilTest.createBinaryTreeWithBreadthFirst(nums);
 		TreeNode upsideRoot = binaryTreeUpsideDown.upsideDownBinaryTree(root);
 		String[] upsideRootStr = CollectionUtilTest.breadthFirstTreeTraversal(upsideRoot);
@@ -28,7 +28,7 @@ public class BinaryTreeUpsideDownTest {
 
 	@Test
 	public void testcase2() {
-		int[] nums = { 1, 2, 3, 4, 5 };
+	    Integer[] nums = { 1, 2, 3, 4, 5 };
 		TreeNode root = CollectionUtilTest.createBinaryTreeWithBreadthFirst(nums);
 		TreeNode upsideRoot = binaryTreeUpsideDown.upsideDownBinaryTree(root);
 		String[] upsideRootStr = CollectionUtilTest.breadthFirstTreeTraversal(upsideRoot);
