@@ -68,5 +68,12 @@ public class SkylineProblemTest {
 		expected.add(Lists.newArrayList(24, 0));
 		CollectionUtilTest.assertListOfList(expected, skyline);
 	}
+	
+	@Test
+    public void  testcase5() {
+	    int N = 16;
+	    int n = (1 << ((int) Math.ceil(Math.log(N) / Math.log(2)) + 1));
+	    System.out.println(N + " -> "  + n);
+	}
 
 }

@@ -3,12 +3,12 @@ package org.pg.march.lc.coll;
 /*
  * https://leetcode.com/problems/find-median-from-data-stream/
  */
-public class MedianFinder {
+public class MedianFinderWithTree {
 
 	private Tree tree;
 	
 	/** initialize your data structure here. */
-	public MedianFinder() {
+	public MedianFinderWithTree() {
 		tree = new Tree();
 	}
 
