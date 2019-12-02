@@ -25,4 +25,10 @@ public class JumpGameTest {
 		int[] nums = { 3, 2, 1, 0, 4 };
 		Assert.assertEquals(false, jumpGame.canJump(nums));
 	}
+
+	@Test
+	public void testcase3() {
+		int[] nums = { 1, 1, 1, 0 };
+		Assert.assertEquals(true, jumpGame.canJump(nums));
+	}
 }
