@@ -1,5 +1,6 @@
 package org.pg.march.util;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -85,6 +86,15 @@ public class CollectionUtil {
             prev = next;
         }
         return head;
+    }
+    
+    public static List<Integer> traverseLinkedList(ListNode head) {
+    	List<Integer> res = new ArrayList<>();
+    	while(head != null) {
+    		res.add(head.val);
+    		head = head.next;
+    	}
+    	return res;
     }
 
     public static Node createDoubleLinkedList(int[] nums) {
