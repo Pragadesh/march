@@ -4,6 +4,8 @@ import java.util.Stack;
 
 /*
  * https://leetcode.com/problems/largest-rectangle-in-histogram/
+ * 
+ * https://www.youtube.com/watch?v=VNbkzsnllsU
  */
 public class LargestRectangleInHistogram {
 
