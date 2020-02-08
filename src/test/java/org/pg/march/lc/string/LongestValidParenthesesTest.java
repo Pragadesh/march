@@ -38,4 +38,9 @@ public class LongestValidParenthesesTest {
     public void testcase5() {
     	Assert.assertEquals(4, longestValidParentheses.longestValidParentheses(")()())"));
     }
+    
+    @Test
+    public void testcase6() {
+        Assert.assertEquals(8, longestValidParentheses.longestValidParentheses("(())(())"));
+    }
 }

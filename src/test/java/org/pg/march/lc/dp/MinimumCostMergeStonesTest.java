@@ -35,6 +35,6 @@ public class MinimumCostMergeStonesTest {
     @Test
     public void testcase4() {
         int[] stones = { 3, 5, 1, 2, 6 };
-        Assert.assertEquals(25, minimumCostMergeStones.mergeStonesBP2D(stones, 3));
+        Assert.assertEquals(25, minimumCostMergeStones.mergeStones(stones, 3));
     }
 }

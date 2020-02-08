@@ -17,6 +17,6 @@ public class BurstBalloonsTest {
     @Test
     public void testcase1() {
         int[] nums = { 3, 1, 5, 8 };
-        Assert.assertEquals(167, burstBalloons.maxCoins(nums));
+        Assert.assertEquals(167, burstBalloons.maxCoinsTopDown(nums));
     }
 }

@@ -1,5 +1,8 @@
 package org.pg.march.lc.graph;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * https://leetcode.com/problems/redundant-connection-ii/
  */
@@ -7,48 +10,61 @@ public class RedundantConnectionDirected {
 
 
     public int[] findRedundantDirectedConnection(int[][] edges) {
-        if (edges == null || edges.length == 0) {
-            return null;
-        }
-        int[] e1 = null;
-        int[] e2 = null;
-        int[] parents = new int[edges.length + 1];
-
-        for (int i = 0; i < edges.length; i++) {
-            if (parents[edges[i][1]] > 0) {
-                e1 = new int[] { parents[edges[i][1]], edges[i][1] };
-                e2 = new int[] { edges[i][0], edges[i][1] };
-                edges[i][0] = 0;
-            } else {
-                parents[edges[i][1]] = edges[i][0];
-            }
-        }
-
-        for (int i = 0; i < parents.length; i++) {
-            parents[i] = i;
-        }
-
-        for (int i = 0; i < edges.length; i++) {
-            if (edges[i][0] == 0) {
-                continue;
-            }
-            if (root(parents, edges[i][0]) == edges[i][1]) {
-                if (e1 == null) {
-                    return edges[i];
-                } else {
-                    return e1;
-                }
-            }else {
-                parents[edges[i][1]] = edges[i][0];
-            }
-        }
-        return e2;
+    	int N = 0;
+    	for(int[] edge : edges) {
+    		N = Math.max(N, Math.max(edge[0], edge[1]));
+    	}
+    	N++;
+    	Graph graph = new Graph(N);
+    	for(int[] edge : edges) {
+    		graph.addEdge(edge[0], edge[1]);
+    	}
+    	int[] parent = new int[N];
+    	boolean[] inPath = new boolean[N];
+    	boolean[] visited = new boolean[N];
+    	
+    	for(int i=1; i<=N; i++) {
+    		if(!visited[i]) {
+    			int[] res = dfs(graph, parent, inPath, visited, i);
+        		if(res != null) return res;
+    		}
+    	}
+    	return null;
     }
-
-    private int root(int[] parents, int p) {
-        while (p != parents[p]) {
-            p = parents[p];
-        }
-        return p;
+    
+    private int[] dfs(Graph graph, int[] parent, boolean[] inPath, boolean[] visited, int v) {
+    	visited[v] = true;
+    	inPath[v] = true;
+    	for(int adj : graph.adj[v]) {
+    		if((parent[adj] > 0 && parent[adj] != v) || inPath[adj]) {
+    			return new int[] {v, adj};
+    		}
+    		parent[adj] = v;
+    		if(!visited[adj]) {
+    			int[] res = dfs(graph, parent, inPath, visited, adj);
+        		if(res != null) return res;
+    		}
+    	}
+    	inPath[v] = false;
+    	return null;
     }
+    
+    private static class Graph {
+
+		final int V;
+		final List<Integer>[] adj;
+
+		public Graph(int V) {
+			this.V = V;
+			this.adj = new List[V];
+			for (int i = 0; i < V; i++) {
+				this.adj[i] = new ArrayList<>();
+			}
+		}
+
+		public void addEdge(int v, int w) {
+			this.adj[v].add(w);
+		}
+	}
+
 }

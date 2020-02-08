@@ -2,33 +2,37 @@ package org.pg.march.lc.dp;
 
 public class MinimumCostMergeStones {
 
-    /*
-     * https://leetcode.com/problems/minimum-cost-to-merge-stones/ 1 <=
-     * stones.length <= 30 2 <= K <= 30 1 <= stones[i] <= 100
-     */
-    public int mergeStones(int[] stones, int K) {
-        return 0;
-    }
+	/*
+	 * https://leetcode.com/problems/minimum-cost-to-merge-stones/ 1 <=
+	 * stones.length <= 30 2 <= K <= 30 1 <= stones[i] <= 100
+	 */
+	public int mergeStones(int[] stones, int K) {
 
-    public int mergeStonesBP2D(int[] stones, int K) {
-        int n = stones.length;
-        if ((n - 1) % (K - 1) > 0)
-            return -1;
+		int N = stones.length;
+		if ((N - 1) % (K - 1) > 0)
+			return -1;
+		int[] sum = new int[N + 1];
+		int[][] dp = new int[N][N];
+		for (int i = 1; i < N; i++) {
+			sum[i] = sum[i - 1] + stones[i - 1];
+		}
+		sum[N] = sum[N - 1] + stones[N - 1];
+		for (int size = K; size <= N; size++) {
 
-        int[] prefix = new int[n + 1];
-        for (int i = 0; i < n; i++)
-            prefix[i + 1] = prefix[i] + stones[i];
+			for (int left = 0; (left + size) <= N; left++) {
+				int right = left + size - 1;
+				int min = Integer.MAX_VALUE;
+				for (int mid = left; mid < right; mid += (K - 1)) {
+					min = Math.min(min, dp[left][mid] + dp[mid + 1][right]);
+				}
+				dp[left][right] = min;
+				if((right - left ) % (K -1) == 0) {
+					dp[left][right] = min + sum[right + 1] - sum[left];
+				}
+			}
+		}
 
-        int[][] dp = new int[n][n];
-        for (int m = K; m <= n; ++m)
-            for (int i = 0; i + m <= n; ++i) {
-                int j = i + m - 1;
-                dp[i][j] = Integer.MAX_VALUE;
-                for (int mid = i; mid < j; mid += K - 1)
-                    dp[i][j] = Math.min(dp[i][j], dp[i][mid] + dp[mid + 1][j]);
-                if ((j - i) % (K - 1) == 0)
-                    dp[i][j] += prefix[j + 1] - prefix[i];
-            }
-        return dp[0][n - 1];
-    }
+		return dp[0][N - 1];
+	}
+
 }
