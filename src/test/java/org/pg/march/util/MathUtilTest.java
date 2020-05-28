@@ -1,16 +1,11 @@
 package org.pg.march.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.TreeSet;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class MathUtilTest {
 
@@ -23,50 +18,92 @@ public class MathUtilTest {
 
 	@Test
 	public void testcase1() {
-		Assert.assertEquals(87178291200L, mathUtil.factorial(14));
+		double totalCart = 39.97;
+		calculateAmount(totalCart);
 	}
 
 	@Test
 	public void testcase2() {
-		Assert.assertEquals(16383L, mathUtil.allPossibleCombination(14));
-
-		List<Integer>[] myList = new List[10];
-		List<Integer>[] clonedList = myList.clone();
+		double totalCart = 131.99;
+		calculateAmount(totalCart);
 	}
 
+	public boolean isEven(int s) {
+		return s % 2 == 0;
+	}
+
+	
 	@Test
 	public void testcase3() {
-		Set<Double> e2 = new HashSet<>();
-		System.out.println(sum());
-		System.out.println(min(15));
-		
+		double totalCart = 51.97;
+		calculateAmount(totalCart);
+//		BigDecimal bd = BigDecimal.valueOf(totalCart);
+//		BigDecimal dd = bd.divide(BigDecimal.valueOf(4)).setScale(2, RoundingMode.HALF_UP);
+//		System.out.println(bd.divide(BigDecimal.valueOf(4)));
+//		System.out.println(dd);
+//		
+//		
+//		System.out.println(BigDecimal.valueOf(19.99444).setScale(2, RoundingMode.HALF_UP));
+//		System.out.println(BigDecimal.valueOf(19.99445).setScale(2, RoundingMode.HALF_UP));
+//		System.out.println(BigDecimal.valueOf(19.995).setScale(2, RoundingMode.HALF_UP));
+//		System.out.println(BigDecimal.valueOf(19.9945).setScale(2, RoundingMode.HALF_UP));
 	}
 	
 	@Test
 	public void testcase4() {
-		System.err.println("".getClass().getSimpleName());
-	}
-	
-	private <E> Set<E> union(Set<? extends E> e1, Set<? extends E> e2) {
-		Set<E> res = new HashSet<>();
-		res.addAll(e1);
-		res.addAll(e2);
-		return res;
-	}
-	
-	private int sum(int... args) {
-		int sum = 0;
-		for(int arg : args) {
-			sum += arg;
+		int target = 2;
+		int res = Integer.MIN_VALUE;
+//		int[] nums = {3, -5, 2, 6, -1};
+		int[] nums = {1,2,3,0,4,5};
+		int[] sum = new int[nums.length];
+		TreeSet<Integer> set = new TreeSet<>();
+		
+		int val = 0;
+		set.add(val);
+		for(int i=0; i<nums.length; i++) {
+			
+			val += nums[i];
+			sum[i] = val;
+			Integer subres = set.ceiling(val - target);
+            if(null!=subres){
+                res=Math.max(res,val-subres);
+            }
+            System.out.println("Res : " + res);
+            set.add(val);
 		}
-		return sum;
 	}
 	
-	private int min(int num, int... args) {
-		int min = num;
-		for(int arg : args) {
-			min = Math.min(arg, min);
+	@Test
+	public void testcase6() {
+		int target = 15;
+		int res = Integer.MIN_VALUE;
+//		int[] nums = {3, -5, 2, 6, -1};
+		int[] nums = {1,2,3,4,5};
+		TreeSet<Integer> set = new TreeSet<>();
+		
+		int val = 0;
+		set.add(val);
+		for(int i=0; i<nums.length; i++) {
+			
+			val += nums[i];
+			Integer subres = set.ceiling(val - target);
+            if(null!=subres){
+                res=Math.max(res,val-subres);
+            }
+            System.out.println("Res : " + res);
+            set.add(val);
 		}
-		return min;
+	}
+	
+	private void calculateAmount(double totalCart) {
+//		BigDecimal tCart = BigDecimal.valueOf(totalCart).setScale(2, RoundingMode.HALF_UP);
+		BigDecimal tCart = BigDecimal.valueOf(totalCart);
+		BigDecimal fPayment = tCart.divide(BigDecimal.valueOf(4)).setScale(2, RoundingMode.HALF_UP);
+//		BigDecimal fPayment = tCart.divide(BigDecimal.valueOf(4)).setScale(2, RoundingMode.HALF_UP);
+		BigDecimal lPayment = fPayment.add(tCart.subtract(fPayment.multiply(BigDecimal.valueOf(4)))).setScale(2, RoundingMode.HALF_UP);
+		System.out.println("Total cart: " + totalCart);
+		System.out.println("First 3 Payment: " + fPayment);
+		System.out.println("Last Payment: " + lPayment);
+		System.out.println("*************************");
 	}
 }
